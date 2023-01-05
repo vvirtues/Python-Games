@@ -1,6 +1,7 @@
 from random import randrange
 import os
 
+# currently marks second input as correct number
 os.system('cls' if os.name == 'nt' else 'clear')
 print("     Welcome to 'Guess my Number'! \n \nI'm thinking of a number between 1 and 100. \nTry to guess it in as few attempts as possible.")
 
@@ -21,12 +22,14 @@ while num != guess:
 		os.system('cls' if os.name == 'nt' else 'clear')
 		print("Too High. \n \n ")
 		guess = int(input(question))
-# doesnt work at all
-	elif guess != int():
-		os.system('cls' if os.name == 'nt' else 'clear')
-		print("Not a number. \n \n ")
-		guess = int(input(question))
+	
 	else:
 		break
 os.system('cls' if os.name == 'nt' else 'clear')
 print("That was the correct number, congratulations!")
+
+try:
+	int(guess)
+except ValueError:	
+		os.system('cls' if os.name == 'nt' else 'clear')
+		print("Not a number. \n \n ")
